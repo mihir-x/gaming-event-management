@@ -1,0 +1,45 @@
+[
+    {
+      "id": 1,
+      "title": "Tech Conference Planning",
+      "image": "https://i.ibb.co/tczHKWn/alexandr.jpg",
+      "price": 8000,
+      "description": "Our Tech Conference Planning service is tailored to ensure your tech conference is a resounding success. From venue selection to speaker coordination and marketing strategy, we handle every detail. Let us bring your vision to life and create a memorable tech conference experience."
+    },
+    {
+      "id": 2,
+      "title": "Gaming Expo Management",
+      "image": "https://i.ibb.co/LnnDhGB/gamigexpo.webp",
+      "price": 7500,
+      "description": "Elevate your gaming expo with our expert Gaming Expo Management service. We manage booth logistics, sponsorships, ticketing, and attendee engagement. Whether it's a large-scale convention or a niche gaming event, we ensure a seamless and engaging experience for all attendees."
+    },
+    {
+      "id": 3,
+      "title": "Hackathon Organization",
+      "image": "https://i.ibb.co/gvGpbcT/hackathon-1.webp",
+      "price": 5000,
+      "description": "Fuel innovation with our Hackathon Organization service. We take care of hackathon logistics, technology setup, mentorship coordination, and judging panels. Whether it's a 24-hour coding marathon or a themed hackathon, we create an environment for creativity to thrive."
+    },
+    {
+      "id": 4,
+      "title": "Virtual Reality Event Management",
+      "image": "https://i.ibb.co/qyMMJn6/VR.jpg",
+      "price": 9000,
+      "description": "Immerse your audience in the world of VR with our Virtual Reality Event Management service. We handle VR hardware setup, content curation, and interactive experiences. From virtual product launches to immersive training sessions, we make VR events unforgettable."
+    },
+    {
+      "id": 5,
+      "title": "eSports Tournament Coordination",
+      "image": "https://i.ibb.co/ZJctF7Z/esports.jpg",
+      "price": 6500,
+      "description": "For competitive gaming at its finest, choose our eSports Tournament Coordination service. We manage tournament brackets, player registrations, live streaming, and sponsorship partnerships. Whether it's a local LAN event or a global eSports championship, we ensure a seamless gaming competition."
+    },
+    {
+      "id": 6,
+      "title": "Tech Meetup and Networking",
+      "image": "https://i.ibb.co/L81r54R/1-i-S6-HGi6-ip-Xfj-AN25-FBCNw.png",
+      "price": 3000,
+      "description": "Facilitate valuable connections in the tech industry with our Tech Meetup and Networking service. We organize tech-focused meetups, panel discussions, and networking events. Connect with like-minded professionals, share insights, and foster collaborations in a welcoming environment."
+    }
+  ]
+  
