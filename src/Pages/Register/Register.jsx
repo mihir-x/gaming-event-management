@@ -18,6 +18,11 @@ const Register = () => {
         const email = e.target.email.value 
         const password = e.target.password.value 
 
+        if(!/^(?=.*?[A-Z])(?=.*?[!@#$%^&*?-]).{6,}$/.test(password)){
+            swal('Password Error', 'Password must be at least 6 character and contain capital letter and special character', 'error')
+            return
+        }
+
         createUser(email, password)
         .then(res => {
             updateProfile(auth.currentUser, {displayName: name, photoURL: photo})
