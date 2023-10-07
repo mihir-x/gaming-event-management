@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 
 const Service = ({ service }) => {
     
-    const {title, image, price, description} = service
+    const {id, title, image, price, description} = service
     
 
     return (
@@ -20,7 +21,7 @@ const Service = ({ service }) => {
                 </h5>
                 <div>
                     <h3 className='text-white font-bold text-lg'>${price}</h3>
-                    <button className='btn btn-accent'>See Details</button>
+                    <Link className='btn btn-accent' to={`/${id}`}>See Details</Link>
                 </div>
             </div>
         </div>
