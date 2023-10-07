@@ -6,7 +6,7 @@ import swal from "sweetalert";
 
 const Login = () => {
 
-    const {logIn} = useContext(AuthContext)
+    const {logIn, signInWithGoogle} = useContext(AuthContext)
     const navigate = useNavigate()
 
     const handleSubmit = (e) => {
@@ -16,7 +16,18 @@ const Login = () => {
         logIn(email, password)
         .then(res => {
             navigate('/')
-            swal('Congratulations', 'Login Successful', 'success')
+            swal(`Congratulations ${res.user.displayName}`, 'Login Successful', 'success')
+        })
+        .catch(err => {
+            swal('Ooops!', err.message, 'error')
+        })
+    }
+
+    const handleGoogleLogin = () =>{
+        signInWithGoogle()
+        .then(res => {
+            navigate('/')
+            swal(`Congratulations ${res.user.displayName}`, 'Login Successful', 'success')
         })
         .catch(err => {
             swal('Ooops!', err.message, 'error')
@@ -25,7 +36,7 @@ const Login = () => {
 
     return (
         <div className="hero min-h-screen bg-base-200">
-            <div className="hero-content flex-col lg:flex-row-reverse">
+            <div className="hero-content flex-col ">
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <form onSubmit={handleSubmit} className="card-body">
                         <div className="form-control">
@@ -46,6 +57,7 @@ const Login = () => {
                     </form>
                     <p className="mx-auto mb-2">Don&apos;t have an account? <Link to='/register' className="text-blue-200">Register</Link></p>
                 </div>
+                <button onClick={handleGoogleLogin} className="px-4 py-2 rounded-md outline bg-transparent">Continue with Google</button>
             </div>
         </div>
     );

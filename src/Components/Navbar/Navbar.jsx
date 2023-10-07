@@ -20,7 +20,7 @@ const Navbar = () => {
 
     const handleLogout = () => {
         logOut()
-        .then(res => {
+        .then(() => {
             swal('See ya','User logged out successfully', 'success')
         })
         .catch(err => {

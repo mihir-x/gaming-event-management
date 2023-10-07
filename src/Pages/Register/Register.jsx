@@ -8,7 +8,7 @@ import swal from 'sweetalert';
 
 const Register = () => {
 
-    const {createUser} = useContext(AuthContext)
+    const {createUser, signInWithGoogle} = useContext(AuthContext)
     const navigate = useNavigate()
 
     const handleSubmit = (e) =>{
@@ -33,9 +33,20 @@ const Register = () => {
 
     }
 
+    const handleGoogleLogin = () => {
+        signInWithGoogle()
+        .then(res => {
+            navigate('/')
+            swal(`Congratulations ${res.user.displayName}`, 'Login Successful', 'success')
+        })
+        .catch(err => {
+            swal('Ooops!', err.message, 'error')
+        })
+    }
+
     return (
         <div className="hero min-h-screen bg-base-200">
-            <div className="hero-content flex-col lg:flex-row-reverse">
+            <div className="hero-content flex-col">
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <form onSubmit={handleSubmit} className="card-body">
                         <div className="form-control">
@@ -68,6 +79,7 @@ const Register = () => {
                     </form>
                     <p className="mx-auto mb-2">Have account? <Link to='/login' className="text-blue-200">Login</Link></p>
                 </div>
+                <button onClick={handleGoogleLogin} className="px-4 py-2 rounded-md outline bg-transparent">Continue with Google</button>
             </div>
         </div>
     );
