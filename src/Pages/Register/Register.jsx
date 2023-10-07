@@ -1,6 +1,9 @@
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { updateProfile } from "firebase/auth";
+import { auth } from "../../Firebase/firebase.config";
+import swal from 'sweetalert';
 
 
 const Register = () => {
@@ -17,12 +20,16 @@ const Register = () => {
 
         createUser(email, password)
         .then(res => {
-            res.user.displayName = name
-            res.user.photoURL = photo
+            updateProfile(auth.currentUser, {displayName: name, photoURL: photo})
+            .then(res => console.log('profile updated', res))
+            .catch(err => console.log(err.message))
             navigate('/')
+            swal('Congratulations','User Created Successfully', 'success')
             console.log(res.user)
         })
-        .catch(err => console.log(err.message))
+        .catch(err => {
+            swal('Ooop!', err.message, 'error')
+        })
 
     }
 

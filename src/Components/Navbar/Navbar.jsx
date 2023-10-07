@@ -1,16 +1,32 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
+import swal from "sweetalert";
 
 
 
 const Navbar = () => {
 
+    const { user, logOut } = useContext(AuthContext)
+    console.log(user)
+
     const navLinks = <>
 
-        <li><NavLink to='/' className={({isActive, isPending}) => isPending? 'pending': isActive? 'font-bold text-red-600 bg-yellow-400 underline' : ''}>Home</NavLink></li>
-        <li><NavLink to='/profile' className={({isActive, isPending}) => isPending? 'pending': isActive? 'font-bold text-red-600 bg-yellow-400 underline' : ''}>Profile</NavLink></li>
-        <li><NavLink to='/about' className={({isActive, isPending}) => isPending? 'pending': isActive? 'font-bold text-red-600 bg-yellow-400 underline' : ''}>About</NavLink></li>
+        <li><NavLink to='/' className={({ isActive, isPending }) => isPending ? 'pending' : isActive ? 'font-bold text-red-600 bg-yellow-400 underline' : ''}>Home</NavLink></li>
+        <li><NavLink to='/profile' className={({ isActive, isPending }) => isPending ? 'pending' : isActive ? 'font-bold text-red-600 bg-yellow-400 underline' : ''}>Profile</NavLink></li>
+        <li><NavLink to='/about' className={({ isActive, isPending }) => isPending ? 'pending' : isActive ? 'font-bold text-red-600 bg-yellow-400 underline' : ''}>About</NavLink></li>
 
     </>
+
+    const handleLogout = () => {
+        logOut()
+        .then(res => {
+            swal('See ya','User logged out successfully', 'success')
+        })
+        .catch(err => {
+            swal('Ooops!', err.message, 'error')
+        })
+    }
 
     return (
         <div className="navbar shadow-2xl">
@@ -31,7 +47,18 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link to='/login'><button className=" p-2 rounded-md bg-slate-700">Login</button></Link>
+                {
+                    user ? <div className="dropdown dropdown-end">
+                        <label tabIndex={0} className="btn btn-ghost rounded-btn">
+                            <img src={user.photoURL} alt="" className="w-10 h-10 rounded-full"/>
+                        </label>
+                        <ul tabIndex={0} className="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-52 mt-4">
+                            <li>{user.email}</li>
+                            <li><button onClick={handleLogout} className="p-2 rounded-md bg-slate-700">Logout</button></li>
+                        </ul>
+                    </div>
+                        : <Link to='/register'><button className=" p-2 rounded-md bg-slate-700">Register</button></Link>
+                }
             </div>
         </div>
     );
