@@ -1,9 +1,27 @@
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
+import swal from "sweetalert";
 
 
 const Login = () => {
 
-    const 
+    const {logIn} = useContext(AuthContext)
+    const navigate = useNavigate()
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        const email = e.target.email.value 
+        const password = e.target.password.value 
+        logIn(email, password)
+        .then(res => {
+            navigate('/')
+            swal('Congratulations', 'Login Successful', 'success')
+        })
+        .catch(err => {
+            swal('Ooops!', err.message, 'error')
+        })
+    }
 
     return (
         <div className="hero min-h-screen bg-base-200">
