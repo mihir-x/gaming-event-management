@@ -23,7 +23,7 @@ const ServiceDetails = () => {
                     <p>{description}</p>
                     <div className="card-actions justify-end">
                         <Link className="btn btn-success font-semibold text-white" to={-1}>Go Back</Link>
-                        <button className="btn btn-primary">Buy Now ${price}</button>
+                        <button className="btn btn-primary">Hire Us ${price}</button>
                     </div>
                 </div>
             </div>

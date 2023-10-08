@@ -19,6 +19,7 @@ const Login = () => {
             swal(`Congratulations ${res.user.displayName}`, 'Login Successful', 'success')
         })
         .catch(err => {
+            console.log(err)
             swal('Ooops!', err.message, 'error')
         })
     }
