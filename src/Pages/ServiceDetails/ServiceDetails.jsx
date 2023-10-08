@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLoaderData, useParams } from "react-router-dom";
+import swal from "sweetalert";
 
 const ServiceDetails = () => {
 
@@ -14,6 +15,29 @@ const ServiceDetails = () => {
 
     const { title, image, price, description } = clickedService
 
+    const handleHired = () =>{
+        const hiredArray = []
+        const storedHired = JSON.parse(localStorage.getItem('hired'))
+
+        if(!storedHired){
+            hiredArray.push(clickedService)
+            localStorage.setItem('hired',JSON.stringify(hiredArray))
+            swal('Thank you!', 'You have hired us for this service', 'success')
+        }
+        else{
+            const isExist = storedHired.find(h => h.id == params.id)
+
+            if(!isExist){
+                hiredArray.push(...storedHired, clickedService)
+                localStorage.setItem('hired', JSON.stringify(hiredArray))
+                swal('Thank you!', 'You have hired us for this service', 'success')
+            }
+            else{
+                swal('Hi there!', 'You have already hired us for this service', 'error')
+            }
+        }
+    }
+
     return (
         <div className="max-w-screen-lg mx-auto mt-20">
             <div className=" h-screen shadow-xl">
@@ -23,7 +47,7 @@ const ServiceDetails = () => {
                     <p>{description}</p>
                     <div className="card-actions justify-end">
                         <Link className="btn btn-success font-semibold text-white" to={-1}>Go Back</Link>
-                        <button className="btn btn-primary">Hire Us ${price}</button>
+                        <button onClick={handleHired} className="btn btn-primary">Hire Us ${price}</button>
                     </div>
                 </div>
             </div>

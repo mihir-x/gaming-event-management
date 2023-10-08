@@ -18,9 +18,17 @@ const Login = () => {
             navigate('/')
             swal(`Congratulations ${res.user.displayName}`, 'Login Successful', 'success')
         })
-        .catch(err => {
-            console.log(err)
-            swal('Ooops!', err.message, 'error')
+        .catch(error => {
+            const errorMessage = error.code 
+            if(errorMessage === 'auth/wrong-password'){
+                swal('Ooops!','Incorrect Password', 'error')
+            }
+            if(errorMessage === 'auth/user-not-found'){
+                swal('Ooops!','Incorrect Email', 'error')
+            }
+            else{
+                swal('Ooops!','Incorrect Email or Password', 'error')
+            }
         })
     }
 
@@ -36,9 +44,10 @@ const Login = () => {
     }
 
     return (
-        <div className="hero min-h-screen bg-base-200">
+        <div className="hero min-h-screen bg-base-200 pt-20">
             <div className="hero-content flex-col ">
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                    <h1 className="text-center text-xl font-semibold mt-4">Login Now</h1>
                     <form onSubmit={handleSubmit} className="card-body">
                         <div className="form-control">
                             <label className="label">
