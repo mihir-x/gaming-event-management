@@ -15,7 +15,7 @@ const ServiceDetails = () => {
     const { title, image, price, description } = clickedService
 
     return (
-        <div className="max-w-screen-lg mx-auto ">
+        <div className="max-w-screen-lg mx-auto mt-20">
             <div className=" h-screen shadow-xl">
                 <figure className="h-[60%]"><img src={image} alt="Shoes" className="h-full w-full"/></figure>
                 <div className="card-body">
