@@ -1,8 +1,15 @@
-
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 
 const OurTeam = () => {
+
+    // useEffect(() => {
+    //     Aos.init()
+    // },[])
+
+
     return (
-        <div className="max-w-screen-lg mx-auto mt-8 md:mt-12 lg:mt-16">
+        <div className="max-w-screen-lg mx-auto mt-8 md:mt-12 lg:mt-16" data-aos = 'fade-right'>
             <div className="text-center">
                 <h1 className="font-bold text-xl md:text-2xl lg:text-4xl">Our Team</h1>
                 <p className="font-semibold text-base md:text-xl">Here are our dedicated team members who make all this happen</p>
