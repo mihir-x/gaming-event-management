@@ -2,7 +2,7 @@
 
 const FrequentQuestions = () => {
     return (
-        <div className="max-w-screen-lg mx-auto my-5 md:my-8 lg:my-16 space-y-5">
+        <div className="max-w-screen-lg mx-auto my-5 md:my-8 lg:my-16 space-y-10">
             <h1 className="text-xl md:text-3xl lg:text-4xl font-semibold text-center">Frequently Asked Questions</h1>
             <div className="flex flex-col-reverse md:flex-row items-center ">
                 <div className="space-y-5">

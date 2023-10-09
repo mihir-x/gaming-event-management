@@ -13,11 +13,11 @@ const Service = ({ service }) => {
                 <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-t from-black/80 via-black/50"></div>
             </div>
             <div className="relative p-6 py-14 px-6 md:px-12">
-                <h2 className="mb-6 block font-sans text-lg md:text-xl lg:text-2xl font-medium leading-[1.5] tracking-normal text-white antialiased">
+                <h2 className="mb-6 block font-sans text-lg md:text-xl lg:text-2xl font-bold leading-[1.5] tracking-normal text-yellow-500 antialiased">
                     {title}
                 </h2>
                 <h5 className="mb-4 block font-sans text-base md:text-xl leading-snug tracking-normal text-white antialiased">
-                    {description.slice(0, 50)}
+                    {description.slice(0, 55)}
                 </h5>
                 <div>
                     <h3 className='text-white font-bold text-lg'>${price}</h3>

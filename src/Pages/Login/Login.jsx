@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import swal from "sweetalert";
+import { FcGoogle } from 'react-icons/fc';
 
 
 const Login = () => {
@@ -67,7 +68,7 @@ const Login = () => {
                     </form>
                     <p className="mx-auto mb-2">Don&apos;t have an account? <Link to='/register' className="text-blue-200">Register</Link></p>
                 </div>
-                <button onClick={handleGoogleLogin} className="px-4 py-2 rounded-md outline bg-transparent">Continue with Google</button>
+                <button onClick={handleGoogleLogin} className="px-4 py-2 rounded-md outline bg-transparent flex items-center gap-2"><FcGoogle></FcGoogle> Continue with Google</button>
             </div>
         </div>
     );

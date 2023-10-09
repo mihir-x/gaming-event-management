@@ -4,6 +4,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import { auth } from "../../Firebase/firebase.config";
 import swal from 'sweetalert';
+import { FcGoogle } from 'react-icons/fc';
 
 
 const Register = () => {
@@ -35,7 +36,6 @@ const Register = () => {
             .catch(err => {
                 swal('Ooop!', err.message, 'error')
             })
-
     }
 
     const handleGoogleLogin = () => {
@@ -85,7 +85,7 @@ const Register = () => {
                     </form>
                     <p className="mx-auto mb-2">Have account? <Link to='/login' className="text-blue-200">Login</Link></p>
                 </div>
-                <button onClick={handleGoogleLogin} className="px-4 py-2 rounded-md outline bg-transparent">Continue with Google</button>
+                <button onClick={handleGoogleLogin} className="px-4 py-2 rounded-md outline bg-transparent flex items-center gap-2"><FcGoogle></FcGoogle> Continue with Google</button>
             </div>
         </div>
     );
