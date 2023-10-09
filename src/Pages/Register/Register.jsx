@@ -27,7 +27,10 @@ const Register = () => {
         createUser(email, password)
             .then(res => {
                 updateProfile(auth.currentUser, { displayName: name, photoURL: photo })
-                    .then(res => console.log('profile updated', res))
+                    .then(res => {
+                        console.log('profile updated', res)
+                        window.location.reload(true)
+                    })
                     .catch(err => console.log(err.message))
                 navigate('/')
                 swal('Congratulations', 'User Created Successfully', 'success')
