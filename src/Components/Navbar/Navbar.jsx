@@ -11,9 +11,9 @@ const Navbar = () => {
 
     const navLinks = <>
 
-        <li><NavLink to='/' className={({ isActive, isPending }) => isPending ? 'pending' : isActive ? 'font-bold text-red-600 bg-yellow-400 underline' : ''}>Home</NavLink></li>
-        <li><NavLink to='/profile' className={({ isActive, isPending }) => isPending ? 'pending' : isActive ? 'font-bold text-red-600 bg-yellow-400 underline' : ''}>Profile</NavLink></li>
-        <li><NavLink to='/hired' className={({ isActive, isPending }) => isPending ? 'pending' : isActive ? 'font-bold text-red-600 bg-yellow-400 underline' : ''}>Hired Services</NavLink></li>
+        <li className="text-white font-semibold"><NavLink to='/' className={({ isActive, isPending }) => isPending ? 'pending' : isActive ? 'font-bold text-red-600 bg-yellow-400 underline' : ''}>Home</NavLink></li>
+        <li className="text-white font-semibold"><NavLink to='/profile' className={({ isActive, isPending }) => isPending ? 'pending' : isActive ? 'font-bold text-red-600 bg-yellow-400 underline' : ''}>Profile</NavLink></li>
+        <li className="text-white font-semibold"><NavLink to='/hired' className={({ isActive, isPending }) => isPending ? 'pending' : isActive ? 'font-bold text-red-600 bg-yellow-400 underline' : ''}>Hired Services</NavLink></li>
 
     </>
 
@@ -28,7 +28,7 @@ const Navbar = () => {
     }
 
     return (
-        <div className="navbar shadow-2xl fixed top-0 z-50 bg-opacity-80 bg-blue-800">
+        <div className="navbar shadow-2xl fixed top-0 z-50 bg-opacity-80 bg-black">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">

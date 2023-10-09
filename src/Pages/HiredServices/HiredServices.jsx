@@ -1,20 +1,22 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Hired from "../../Components/Hired/Hired";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 
 const HiredServices = () => {
+    const {user} = useContext(AuthContext)
 
     const [hired, setHired] = useState([])
     const [isFound, setIsFound] = useState(false)
 
     useEffect(() => {
-        const storedHiredServices = JSON.parse(localStorage.getItem('hired'))
+        const storedHiredServices = JSON.parse(localStorage.getItem(`${user.email}`))
 
         if(storedHiredServices){
             setHired(storedHiredServices)
             setIsFound(true)
         }
-    },[])
+    },[user.email])
 
     // const handleSubmit = e =>{
     //     e.preventDefault()
@@ -25,7 +27,7 @@ const HiredServices = () => {
     // }
 
     return (
-        <div className="mt-28 max-w-screen-lg mx-auto">
+        <div className="mt-28 max-w-screen-lg mx-auto my-5">
             {/* <div>
                 <form onSubmit={handleSubmit}>
                     <input type="text" name="text" id="" />

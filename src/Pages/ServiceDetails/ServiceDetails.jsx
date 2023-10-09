@@ -1,8 +1,10 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import swal from "sweetalert";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const ServiceDetails = () => {
+    const {user} = useContext(AuthContext)
 
     const allServices = useLoaderData()
 
@@ -17,11 +19,11 @@ const ServiceDetails = () => {
 
     const handleHired = () =>{
         const hiredArray = []
-        const storedHired = JSON.parse(localStorage.getItem('hired'))
+        const storedHired = JSON.parse(localStorage.getItem(`${user.email}`))
 
         if(!storedHired){
             hiredArray.push(clickedService)
-            localStorage.setItem('hired',JSON.stringify(hiredArray))
+            localStorage.setItem(`${user.email}`,JSON.stringify(hiredArray))
             swal('Thank you!', 'You have hired us for this service', 'success')
         }
         else{
@@ -29,7 +31,7 @@ const ServiceDetails = () => {
 
             if(!isExist){
                 hiredArray.push(...storedHired, clickedService)
-                localStorage.setItem('hired', JSON.stringify(hiredArray))
+                localStorage.setItem(`${user.email}`, JSON.stringify(hiredArray))
                 swal('Thank you!', 'You have hired us for this service', 'success')
             }
             else{
