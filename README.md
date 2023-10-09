@@ -1,8 +1,13 @@
-# React + Vite
+# Tech and Gaming Event Management
+Website link: https://gaming-event-management-876bd.web.app/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a website that provides different types of tech and gaming event management services.
 
-Currently, two official plugins are available:
+# Some features of this website:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Here we provide 6 types of tech and gaming event management services
+- We have a login and a registration page where user can login or register
+- After successful login user can see his profile information in profile page
+- If user click the see details button on service card they will see a service detail page that shows the details about that particular services
+- On the service detail page clicking on the hire us button will add the service to the user's hired services page
+- User can log out by clicking the log out button
