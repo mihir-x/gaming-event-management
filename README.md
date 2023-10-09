@@ -1,4 +1,4 @@
-# Tech and Gaming Event Management
+# Tech and Gaming Event Management Services 
 Website link: https://gaming-event-management-876bd.web.app/
 
 This is a website that provides different types of tech and gaming event management services.
