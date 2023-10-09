@@ -7,6 +7,7 @@ import OurTeam from "../../Components/OurTeam/OurTeam";
 import Aos from 'aos'
 import 'aos/dist/aos.css'
 import { useEffect } from "react";
+import FrequentQuestions from "../../Components/FrequentQuestions/FrequentQuestions";
 
 
 const Home = () => {
@@ -29,6 +30,7 @@ const Home = () => {
                 </div>
             </div>
             <OurTeam></OurTeam>
+            <FrequentQuestions></FrequentQuestions>
             <Footer></Footer>
         </div>
     );
